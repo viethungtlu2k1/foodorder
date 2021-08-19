@@ -28,11 +28,12 @@
         $count = mysqli_num_rows($res);
         if ($count > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
+                $id = $row['id'];
                 $title = $row['title'];
                 $image_name = $row['image_name'];
                 $price = $row['price'];
                 $description = $row['description'];
-        ?>
+            ?>
                 <div class="food-menu-box">
                     <div class="food-menu-img">
                         <img src="images/food/<?=$image_name?>" class="img-responsive img-curve">
@@ -46,10 +47,10 @@
                         </p>
                         <br>
 
-                        <a href="order.html" class="btn btn-primary">Order Now</a>
+                        <a href="order.php?id=<?=$id?>" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
-        <?php
+            <?php
 
             }
         }

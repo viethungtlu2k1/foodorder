@@ -7,7 +7,7 @@ include("bridge/menu.php")
 <section class="food-search text-center">
     <div class="container">
 
-        <form action="food-search.html" method="POST">
+        <form action="food-search.php" method="POST">
             <input type="search" name="search" placeholder="Search for Food.." required>
             <input type="submit" name="submit" value="Search" class="btn btn-primary">
         </form>
@@ -65,6 +65,7 @@ include("bridge/menu.php")
         $count = mysqli_num_rows($res);
         if ($count > 0) {
             while ($row = mysqli_fetch_assoc($res)) {
+                $id = $row['id'];
                 $title = $row['title'];
                 $image_name = $row['image_name'];
                 $price = $row['price'];
@@ -83,7 +84,7 @@ include("bridge/menu.php")
                         </p>
                         <br>
 
-                        <a href="order.php" class="btn btn-primary">Order Now</a>
+                        <a href="order.php?id=<?=$id?>" class="btn btn-primary">Order Now</a>
                     </div>
                 </div>
         <?php

@@ -154,7 +154,6 @@
         }
         if(isset($_FILES['image_name']['name'])){
             $image_name = $_FILES['image_name']['name'];
-
             $source_path = $_FILES['image_name']['tmp_name'];
             $save_path = "../images/food/".$image_name;
 

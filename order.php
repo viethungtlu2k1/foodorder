@@ -25,7 +25,7 @@ include("bridge/menu.php");
                     $price = $row['price'];
                 ?>
                     <div class="food-menu-img">
-                        <img src="images/<?=$image_name?>" class="img-responsive img-curve">
+                        <img src="images/food/<?= $image_name?>" class="img-responsive img-curve">
                     </div>
 
                     <div class="food-menu-desc">
